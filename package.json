@@ -1,0 +1,34 @@
+{
+  "name": "deepest",
+  "version": "0.5.0",
+  "description": "Extremely thorough structural equality test of questionable usefulness.",
+  "main": "deepest.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/deepest.tap.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/othiym23/deepest.git"
+  },
+  "keywords": [
+    "deep",
+    "equals",
+    "structural",
+    "equality",
+    "assert",
+    "testing"
+  ],
+  "author": "Forrest L Norvell <ogd@aoaioxxysz.net> (https://github.com/othiym23)",
+  "license": "Apache License 2.0",
+  "devDependencies": {
+    "tap": "~0.3.3",
+    "chai": "~1.4.2",
+    "inherits": "~1.0.0"
+  },
+  "optionalDependencies": {
+    "buffertools": "~1.1.0"
+  }
+}
