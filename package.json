@@ -1,6 +1,6 @@
 {
   "name": "deepest",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Extremely thorough structural equality test of questionable usefulness.",
   "main": "deepest.js",
   "directories": {
