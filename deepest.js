@@ -10,14 +10,14 @@ try {
   fastEqual = Buffer.equals;
 }
 catch (e) {
-  // whoops, weren't able to install node-buffertools
+  // whoops, weren't able to install node-buffertools o well
 }
 
 /**
- * This is a node-specific version of a structural equality test, modeled on
- * bits and pieces of loads of other implementations of this algorithm, most
- * notably the one in the Node.js source and the Underscore library. It doesn't
- * throw and handles cycles.
+ * This is a node-specific version of an anal structural equality test, modeled
+ * on bits and pieces of many other versions of this check, most notably
+ * deeper, which is in turn based on the Node.js source's assert.deepEqual and
+ * the Underscore library. It doesn't throw and handles cycles.
  *
  * Everybody who writes one of these functions puts the documentation
  * inline, which makes it incredibly hard to follow. Here's what this version
@@ -43,11 +43,14 @@ catch (e) {
  *    themselves, not the callee, which you shouldn't be looking at anyway.
  * 8. Objects are more complex:
  *    a. ensure that a and b are on the same constructor chain
- *    b. ensure that a and b have the same number of own properties (which is
- *       what Object.keys returns).
+ *    b. ensure that a and b have the same number of own properties, *ignoring
+ *       whether they're enumerable or not*.
  *    c. ensure that cyclical references don't blow up the stack.
- *    d. ensure that all the key names match (faster)
- *    e. esnure that all of the associated values match, recursively (slower)
+ *    d. ensure that all the property names match (faster).
+ *    e. fetch each property's descriptor, and ensure all the regular descriptor
+ *       values match.
+ *    f. recursively call deepest on any property values found through the
+ *       descriptor.
  *
  * (SOMEWHAT UNTESTED) ASSUMPTIONS:
  *
