@@ -1,6 +1,6 @@
 {
   "name": "deepest",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Extremely thorough structural equality test of questionable usefulness.",
   "main": "deepest.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/othiym23/deepest.git"
+    "url": "https://github.com/othiym23/node-deepest.git"
   },
   "keywords": [
     "deep",
